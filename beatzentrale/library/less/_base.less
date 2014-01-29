@@ -38,9 +38,9 @@ html, body {
 	/* height: 100%; */
 }
 body {
-	font-family: @sans-serif;
-	font-size: 100%;
-	color: #565656;
+    font-family: @sans-serif;
+    font-size: 100%;
+    color: #565656;
     line-height: 28px;
     margin: 0;
     padding: 0;
@@ -426,6 +426,19 @@ and more scalable.
 		}
 		
 		header.article-header {
+
+			h1.single-title {
+				transform: matrix(1, 0, 0.193862, 0.999848, 0, 0);
+				span {
+					-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1, M12=0, M21=-0.193862, M22=0.999848,sizingMethod='auto expand')";
+					filter: progid:DXImageTransform.Microsoft.Matrix(M11=1, M12=0, M21=-0.0193862, M22=0.999848,sizingMethod='auto expand');
+					-moz-transform:  matrix(1, 0, -0.193862, 0.999848, 0, 0);
+					-webkit-transform:  matrix(1, 0, -0.193862, 0.999848, 0, 0);
+					-o-transform:  matrix(1, 0, -0.193862, 0.999848, 0, 0);		
+					transform: matrix(1, 0, -0.193862, 0.999848, 0, 0);
+		
+				}		
+			}
 		
 			h1 {
 				background-color: #b83078;
@@ -444,7 +457,7 @@ and more scalable.
 				max-width: 620px;
 				height: 50px;
 				
-				a {
+				a, span {
 					color: #FFFFFF;
 					display: block;
 					font-size: 22px;
@@ -508,8 +521,6 @@ and more scalable.
 
 		.single-title,
 		.page-title {}
-
-		.single-title {}
 
 		.page-title {}
 
@@ -1039,7 +1050,7 @@ and more scalable.
 
 .sidebar {
 	float: right;
-    width: 30%;
+	width: 30%;
 }
 
 	.widgettitle {
@@ -1050,11 +1061,11 @@ and more scalable.
 		height: 50px;
 		max-width: 284px;
 		padding: 10px 10px 0 20px;
-		transform: matrix(1, 0.0035, -0.065, 1, 0, 0);
+		transform: matrix(1, 0.025, -0.065, 1, 0, 0);
 		
 		span {
 			display: block;
-			transform: matrix(1, 0, 0.065, 1, 0, 0);
+			transform: matrix(1, -0.025, 0.065, 1, 0, 0);
 		}
 	}
 
@@ -1126,9 +1137,13 @@ and more scalable.
 *********************/
 	
 body.blog {
-	
+
 	#content {
 	
+		#main, .sidebar {
+			margin-top: -40px;
+		}
+
 		#inner-content {
 		
 			#content-header {
